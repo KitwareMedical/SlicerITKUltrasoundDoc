@@ -24,6 +24,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/what-input/what-input.min.js"></script>
     <script type="text/javascript" src="../../_static/foundation-sites/foundation.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -54,7 +55,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Modules</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Scan Conversion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#resampling-methods">Resampling Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resampling-methods">Resampling Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probe-geometries">Probe Geometries</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="CurvilinearArray.html">ScanConvertCurvilinearArray</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="CurvilinearArray.html#io-parameters">IO Parameters</a></li>
 </ul>
@@ -125,6 +127,44 @@ probe.</p>
 scan conversion modules. These algorithms vary in performance and accuracy
 characteristics. They should be selected based on performance requirements and
 behavior for the probe&#8217;s geometry and image contents.</p>
+<p>The ITK methods use the <a class="reference external" href="https://itk.org/Doxygen/html/classitk_1_1ResampleImageFilter.html">itk::ResampleImageFilter</a> while
+the VTK methods use the <a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkProbeFilter.html">vtkProbeFilter</a> or the
+<a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkPointInterpolator.html">vtkPointInterpolator</a>.</p>
+<dl class="docutils">
+<dt><strong>ITKLinear</strong></dt>
+<dd>Tri-linear interpolation with the <a class="reference external" href="https://itk.org/Doxygen/html/classitk_1_1LinearInterpolateImageFunction.html">itk::LinearInterpolateImageFunction</a>.
+This is the default method.</dd>
+<dt><strong>ITKNearestNeighbor</strong></dt>
+<dd>Nearest-neighbor interpolation with the
+<a class="reference external" href="https://itk.org/Doxygen/html/classitk_1_1NearestNeighborInterpolateImageFunction.html">itk::NearestNeighborInterpolateImageFunction</a>.</dd>
+<dt><strong>ITKGaussian</strong></dt>
+<dd>Interpolation with a Gaussian kernel with the
+<a class="reference external" href="https://itk.org/Doxygen/html/classitk_1_1GaussianInterpolateImageFunction.html">itk::GaussianInterpolateImageFunction</a>.</dd>
+<dt><strong>ITKWindowedSinc</strong></dt>
+<dd>Windowed-sinc interpolation with a 3 sample radius Lanczos window using the
+<a class="reference external" href="https://itk.org/Doxygen/html/classitk_1_1WindowedSincInterpolateImageFunction.html">itk::WindowedSincInterpolateImageFunction</a>.</dd>
+<dt><strong>VTKProbeFilter</strong></dt>
+<dd>Interpolation using the <a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkProbeFilter.html">vtkProbeFilter</a>.</dd>
+<dt><strong>VTKVoronoiKernel</strong></dt>
+<dd>Nearest-neighbor-like interpolation using the
+<a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkVoronoiKernel.html">vtkVoronoiKernel</a>.
+The kernel uses points within a radius of <span class="math">\(2.1 * maxOutputVoxelSpacing\)</span>.</dd>
+<dt><strong>VTKLinearKernel</strong></dt>
+<dd>Kernel-based interpolation averaging all points with
+<a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkLinearKernel.html">vtkLinearKernel</a>.
+The kernel uses points within a radius of <span class="math">\(2.1 * maxOutputVoxelSpacing\)</span>.</dd>
+<dt><strong>VTKShepardKernel</strong></dt>
+<dd>Kernel-based interpolation with weights defined by <span class="math">\(1 / r^2\)</span> with the
+<a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkShepardKernel.html">vtkShepardKernel</a>.
+The kernel uses points within a radius of <span class="math">\(2.1 * maxOutputVoxelSpacing\)</span>.</dd>
+<dt><strong>VTKGaussianKernel</strong></dt>
+<dd>Kernel-based interpolation with a Gaussian kernel using the
+<a class="reference external" href="http://www.vtk.org/doc/nightly/html/classvtkGaussianKernel.html">vtkGaussianKernel</a>.
+The kernel uses points within a radius of <span class="math">\(2.1 * maxOutputVoxelSpacing\)</span>.</dd>
+</dl>
+</div>
+<div class="section" id="probe-geometries">
+<h2>Probe Geometries<a class="headerlink" href="#probe-geometries" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CurvilinearArray.html">ScanConvertCurvilinearArray</a><ul>
@@ -148,9 +188,18 @@ behavior for the probe&#8217;s geometry and image contents.</p>
     </div>
   <div class="small-4 large-3 columns" id="sidebar" data-sticky-container>
   <div class="sticky" data-sticky data-margin-top="0">
+  <h3>Page Contents</h3>
+  <ul>
+<li><a class="reference internal" href="#">Scan Conversion</a><ul>
+<li><a class="reference internal" href="#resampling-methods">Resampling Methods</a></li>
+<li><a class="reference internal" href="#probe-geometries">Probe Geometries</a></li>
+</ul>
+</li>
+</ul>
+
 <div id="searchbox" style="display: none">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" placeholder="Search term" />
       <input type="submit" class="button" value="Search" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
