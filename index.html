@@ -51,10 +51,22 @@
             aria-labelledby="dTopbarSiteToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modules/index.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Modules/ScanConversion/index.html">Scan Conversion Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Modules/ScanConversion/CurvilinearArray.html">Curvilinear Array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Modules/ScanConversion/PhasedArray3D.html">Phased Array 3D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Modules/ScanConversion/SliceSeries.html">Slice Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modules/ScanConversion/index.html">Scan Conversion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Modules/ScanConversion/index.html#resampling-methods">Resampling Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Modules/ScanConversion/CurvilinearArray.html">ScanConvertCurvilinearArray</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Modules/ScanConversion/CurvilinearArray.html#io-parameters">IO Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Modules/ScanConversion/PhasedArray3D.html">ScanConvertPhasedArray3D</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Modules/ScanConversion/PhasedArray3D.html#io-parameters">IO Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Modules/ScanConversion/SliceSeries.html">ScanConvertSliceSeries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Modules/ScanConversion/SliceSeries.html#io-parameters">IO Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -90,14 +102,20 @@
 <a class="reference external image-reference" href="https://travis-ci.org/KitwareMedical/SlicerITKUltrasound"><img alt="https://travis-ci.org/KitwareMedical/SlicerITKUltrasound.svg?branch=master" src="https://travis-ci.org/KitwareMedical/SlicerITKUltrasound.svg?branch=master" /></a>
 <a class="reference external image-reference" href="https://circleci.com/gh/KitwareMedical/SlicerITKUltrasound"><img alt="https://circleci.com/gh/KitwareMedical/SlicerITKUltrasound.svg?style=svg" src="https://circleci.com/gh/KitwareMedical/SlicerITKUltrasound.svg?style=svg" /></a>
 <a class="reference external image-reference" href="https://github.com/KitwareMedical/SlicerITKUltrasound"><img alt="https://img.shields.io/github/stars/KitwareMedical/SlicerITKUltrasound.svg?style=social&amp;label=Star" src="https://img.shields.io/github/stars/KitwareMedical/SlicerITKUltrasound.svg?style=social&amp;label=Star" /></a>
-<p>A <a class="reference external" href="http://slicer.org/">3D Slicer</a> extension for ultrasound image formation, processing, and analysis. Interfaces built off the
-<a class="reference external" href="https://github.com/KitwareMedical/ITKUltrasound/">ITKUltrasound</a> library.</p>
+<p>A <a class="reference external" href="http://slicer.org/">3D Slicer</a> <a class="reference internal" href="References.html#fedorov2012" id="id1">[Fedorov2012]</a> extension for ultrasound
+image formation, processing, and analysis. Interfaces built off the
+<a class="reference external" href="https://github.com/KitwareMedical/ITKUltrasound/">ITKUltrasound</a> library
+<a class="reference internal" href="References.html#mccormick2014" id="id2">[McCormick2014]</a>.  The modules available in this are useful for both 2D and 3D
+image generation for traditional B-mode imaging <a class="reference internal" href="References.html#mccormick2010" id="id3">[McCormick2010]</a>, but also
+next-generation ultrasound image modalities like ultrasound spectroscopy
+<a class="reference internal" href="References.html#aylward2016" id="id4">[Aylward2016]</a>, acoustic radiation force imaging (ARFI) <a class="reference internal" href="References.html#palmeri2016" id="id5">[Palmeri2016]</a>,
+acoustic radiation force shear wave imaging (ARFI-SWEI), and others.</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modules/index.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Modules/ScanConversion/index.html">Scan Conversion Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Modules/ScanConversion/index.html">Scan Conversion</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Development.html">Development</a></li>
