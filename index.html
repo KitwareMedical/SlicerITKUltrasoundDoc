@@ -19,7 +19,8 @@
         VERSION:     '0.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -31,7 +32,6 @@
     <link rel="shortcut icon" href="_static/SlicerITKUltrasound.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="SlicerITKUltrasound 0.2.0 documentation" href="#" />
     <link rel="next" title="Installation" href="Installation.html" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro">
   </head>
@@ -106,14 +106,14 @@
 <a class="reference external image-reference" href="https://travis-ci.org/KitwareMedical/SlicerITKUltrasound"><img alt="https://travis-ci.org/KitwareMedical/SlicerITKUltrasound.svg?branch=master" src="https://travis-ci.org/KitwareMedical/SlicerITKUltrasound.svg?branch=master" /></a>
 <a class="reference external image-reference" href="https://circleci.com/gh/KitwareMedical/SlicerITKUltrasound"><img alt="https://circleci.com/gh/KitwareMedical/SlicerITKUltrasound.svg?style=svg" src="https://circleci.com/gh/KitwareMedical/SlicerITKUltrasound.svg?style=svg" /></a>
 <a class="reference external image-reference" href="https://github.com/KitwareMedical/SlicerITKUltrasound"><img alt="https://img.shields.io/github/stars/KitwareMedical/SlicerITKUltrasound.svg?style=social&amp;label=Star" src="https://img.shields.io/github/stars/KitwareMedical/SlicerITKUltrasound.svg?style=social&amp;label=Star" /></a>
-<p>A <a class="reference external" href="http://slicer.org/">3D Slicer</a> <a class="reference internal" href="References.html#fedorov2012" id="id1">[Fedorov2012]</a> extension for ultrasound image formation,
-processing, and analysis. Interfaces are built off the <a class="reference external" href="https://github.com/KitwareMedical/ITKUltrasound/">ITKUltrasound</a> library
-<a class="reference internal" href="References.html#mccormick2014" id="id2">[McCormick2014]</a>.  The modules available in this extension are useful for both
-2D and 3D image generation for traditional B-mode imaging <a class="reference internal" href="References.html#mccormick2010" id="id3">[McCormick2010]</a>,
-but also next-generation ultrasound image modalities like ultrasound
-spectroscopy <a class="reference internal" href="References.html#aylward2016" id="id4">[Aylward2016]</a>, acoustic radiation force imaging (ARFI)
-<a class="reference internal" href="References.html#palmeri2016" id="id5">[Palmeri2016]</a>, acoustic radiation force shear wave imaging (ARFI-SWEI), and
-others.</p>
+<p>A <a class="reference external" href="http://slicer.org/">3D Slicer</a> <a class="reference internal" href="References.html#fedorov2012" id="id1">[Fedorov2012]</a> extension for ultrasound image scan conversion
+of B-mode and next-generation ultrasound imaging modalities.  Interfaces are
+built off the <a class="reference external" href="https://github.com/KitwareMedical/ITKUltrasound/">ITKUltrasound</a> library <a class="reference internal" href="References.html#mccormick2014" id="id2">[McCormick2014]</a>.  The modules available
+in this extension are useful for both 2D and 3D image generation for
+traditional B-mode imaging <a class="reference internal" href="References.html#mccormick2010" id="id3">[McCormick2010]</a>, but also next-generation
+ultrasound image modalities like ultrasound spectroscopy <a class="reference internal" href="References.html#aylward2016" id="id4">[Aylward2016]</a>,
+acoustic radiation force imaging (ARFI) <a class="reference internal" href="References.html#palmeri2016" id="id5">[Palmeri2016]</a>, acoustic radiation
+force shear wave imaging (ARFI-SWEI), and others.</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -169,7 +169,7 @@ and analysis with <a class="reference external" href="https://www.itk.org/">ITK<
 <div class="top-bar row column">
 
     <div class="footer" role="contentinfo">
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 </div>
     <script> $(document).foundation() </script>
